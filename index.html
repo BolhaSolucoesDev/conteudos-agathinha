@@ -19,7 +19,6 @@
     fbq('init', '1900486574673194');
     fbq('track', 'PageView');
 
-    // Evento de compra em PRODUÇÃO
     window.addEventListener('load', function () {
       fbq('track', 'Purchase', {
         value: 10.00,
@@ -27,60 +26,142 @@
       });
     });
   </script>
-
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1900486574673194&ev=Purchase
-      &cd[value]=10.00&cd[currency]=BRL&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1900486574673194&ev=Purchase&cd[value]=10.00&cd[currency]=BRL&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
 
-  <!-- Redirecionamento seguro -->
+  <!-- Redirecionamento -->
   <script>
     setTimeout(function () {
-      window.location.href = "https://t.me/+ivnT0MUSOdUzMjY5";
-    }, 5000);
+      window.location.href = "https://t.me/+tYGpxMV6pIE3Nzkx";
+    }, 3000);
   </script>
 
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #f5f5f5;
+      min-height: 100vh;
+      background-color: #f0faf6;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #d0ede3;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 400px;
+      width: 90%;
       text-align: center;
     }
-
-    .box {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .icon-wrap {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.75rem;
     }
-
-    h1 {
-      color: #2e7d32;
-      font-size: 22px;
-      margin-bottom: 10px;
+    .icon-wrap svg { position: absolute; top: 0; left: 0; }
+    .icon-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; color: #0F6E56;
     }
-
-    p {
-      color: #555;
-      font-size: 16px;
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #1D9E75;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
+    h1 { font-size: 22px; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+    .subtitle { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 2rem; }
+    .destination {
+      background: #f0faf6;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .destination svg { flex-shrink: 0; }
+    .dest-title { font-size: 13px; font-weight: 600; color: #111; margin-bottom: 2px; }
+    .dest-sub { font-size: 12px; color: #999; }
+    .progress-track {
+      height: 3px;
+      background: #e0f0ea;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    #prog-bar {
+      height: 100%;
+      width: 100%;
+      background: #1D9E75;
+      border-radius: 99px;
+      transition: width 0.05s linear;
+    }
+    .countdown { font-size: 13px; color: #999; }
+    .countdown strong { color: #555; }
   </style>
 </head>
-
 <body>
-  <div class="box">
-    <h1>✅ Acesso confirmado!</h1>
-    <p>Estamos liberando seu conteúdo exclusivo.</p>
-    <p>Você será redirecionado automaticamente.</p>
+  <div class="card">
+
+    <div class="icon-wrap">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="34" fill="#E1F5EE"/>
+        <circle cx="36" cy="36" r="34" stroke="#9FE1CB" stroke-width="2"
+          stroke-dasharray="213.6" stroke-dashoffset="213.6"
+          id="ring" style="transform-origin:center;transform:rotate(-90deg);"/>
+      </svg>
+      <div class="icon-inner">✓</div>
+    </div>
+
+    <p class="badge">Pagamento aprovado</p>
+    <h1>Acesso confirmado!</h1>
+    <p class="subtitle">Seu conteúdo exclusivo está sendo liberado.<br>Em instantes você será redirecionado.</p>
+
+    <div class="destination">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.686-1.712 8.07c-.129.576-.467.716-.948.445l-2.625-1.934-1.267 1.22c-.14.14-.258.258-.529.258l.188-2.676 4.867-4.398c.211-.188-.046-.293-.328-.105L7.404 14.38l-2.57-.802c-.559-.175-.57-.559.116-.828l10.038-3.869c.466-.169.874.105.942.805z" fill="#1D9E75"/>
+      </svg>
+      <div>
+        <p class="dest-title">Redirecionando para o Telegram</p>
+        <p class="dest-sub">Grupo exclusivo de membros</p>
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div id="prog-bar"></div>
+    </div>
+    <p class="countdown">Redirecionando em <strong id="sec">3</strong>s</p>
+
   </div>
+
+  <script>
+    const totalMs = 3000;
+    const tick = 50;
+    let elapsed = 0;
+    const bar = document.getElementById('prog-bar');
+    const sec = document.getElementById('sec');
+    const ring = document.getElementById('ring');
+    const circumference = 213.6;
+
+    const t = setInterval(() => {
+      elapsed += tick;
+      const ratio = Math.min(elapsed / totalMs, 1);
+      bar.style.width = (100 - ratio * 100) + '%';
+      ring.style.strokeDashoffset = circumference * (1 - ratio);
+      sec.textContent = Math.max(Math.ceil((totalMs - elapsed) / 1000), 0);
+      if (elapsed >= totalMs) clearInterval(t);
+    }, tick);
+  </script>
 </body>
 </html>
