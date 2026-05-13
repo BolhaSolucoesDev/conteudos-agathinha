@@ -3,118 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecionando para o Instagram...</title>
+  <title>Acesso confirmado</title>
 
-  <!-- Fallback sem JavaScript -->
-  <meta http-equiv="refresh" content="6;url=https://www.instagram.com/phaellacosta7/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="@phaellacosta7 no Instagram" />
-  <meta property="og:description" content="Acesse o perfil oficial no Instagram de @phaellacosta7" />
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" />
-  <meta property="og:url" content="https://www.instagram.com/phaellacosta7/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="@phaellacosta7 no Instagram" />
-  <meta name="twitter:description" content="Acesse o perfil oficial no Instagram de @phaellacosta7" />
-  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" />
-
-  <style>
-    body {
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #fff;
-      text-align: center;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 { font-size: 18px; margin-bottom: 20px; }
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 5px solid #444;
-      border-top: 5px solid #00ff00;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    p { font-size: 14px; margin-top: 15px; opacity: 0.8; }
-    .handle { font-size: 15px; color: #c13584; margin-top: 6px; font-weight: bold; }
-  </style>
-
-  <!-- Facebook Pixel -->
+  <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
+    n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+    n.queue=[]; t=b.createElement(e); t.async=!0;
+    t.src=v; s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+
     fbq('init', '1900486574673194');
     fbq('track', 'PageView');
+
+    window.addEventListener('load', function () {
+      fbq('track', 'Purchase', {
+        value: 10.00,
+        currency: 'BRL'
+      });
+    });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1900486574673194&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1900486574673194&ev=Purchase&cd[value]=10.00&cd[currency]=BRL&noscript=1"/>
   </noscript>
+  <!-- End Facebook Pixel Code -->
 
+  <!-- Redirecionamento -->
   <script>
-    window.onload = function () {
-      setTimeout(function () {
-        if (typeof fbq === 'function') { fbq('track', 'ViewContent'); }
-        setTimeout(function () {
-          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-
-          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-          var username = "phaellacosta7";
-
-          if (/android/i.test(userAgent)) {
-            // Android: tenta deep link via iframe
-            var iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src = "instagram://user?username=" + username;
-            document.body.appendChild(iframe);
-            setTimeout(function () {
-              window.location.replace("https://www.instagram.com/" + username + "/");
-            }, 1500);
-
-          } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            // iOS: Universal Link — iOS intercepta e abre no app automaticamente
-            window.location.replace("https://www.instagram.com/" + username + "/");
-
-          } else {
-            // Desktop ou outros
-            window.location.replace("https://www.instagram.com/" + username + "/");
-          }
-
-        }, 300);
-      }, 3200);
-    };
+    setTimeout(function () {
+      window.location.href = "https://t.me/+tYGpxMV6pIE3Nzkx";
+    }, 3000);
   </script>
 
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0faf6;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #d0ede3;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+    .icon-wrap {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.75rem;
+    }
+    .icon-wrap svg { position: absolute; top: 0; left: 0; }
+    .icon-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; color: #0F6E56;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #1D9E75;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    h1 { font-size: 22px; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+    .subtitle { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 2rem; }
+    .destination {
+      background: #f0faf6;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .destination svg { flex-shrink: 0; }
+    .dest-title { font-size: 13px; font-weight: 600; color: #111; margin-bottom: 2px; }
+    .dest-sub { font-size: 12px; color: #999; }
+    .progress-track {
+      height: 3px;
+      background: #e0f0ea;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    #prog-bar {
+      height: 100%;
+      width: 100%;
+      background: #1D9E75;
+      border-radius: 99px;
+      transition: width 0.05s linear;
+    }
+    .countdown { font-size: 13px; color: #999; }
+    .countdown strong { color: #555; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Aguarde, estamos te direcionando…</h1>
-    <div class="loader"></div>
-    <p>Você será levado ao perfil oficial no Instagram</p>
-    <span class="handle">@phaellacosta7</span>
+  <div class="card">
+
+    <div class="icon-wrap">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="34" fill="#E1F5EE"/>
+        <circle cx="36" cy="36" r="34" stroke="#9FE1CB" stroke-width="2"
+          stroke-dasharray="213.6" stroke-dashoffset="213.6"
+          id="ring" style="transform-origin:center;transform:rotate(-90deg);"/>
+      </svg>
+      <div class="icon-inner">✓</div>
+    </div>
+
+    <p class="badge">Pagamento aprovado</p>
+    <h1>Acesso confirmado!</h1>
+    <p class="subtitle">Seu conteúdo exclusivo está sendo liberado.<br>Em instantes você será redirecionado.</p>
+
+    <div class="destination">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.686-1.712 8.07c-.129.576-.467.716-.948.445l-2.625-1.934-1.267 1.22c-.14.14-.258.258-.529.258l.188-2.676 4.867-4.398c.211-.188-.046-.293-.328-.105L7.404 14.38l-2.57-.802c-.559-.175-.57-.559.116-.828l10.038-3.869c.466-.169.874.105.942.805z" fill="#1D9E75"/>
+      </svg>
+      <div>
+        <p class="dest-title">Redirecionando para o Telegram</p>
+        <p class="dest-sub">Grupo exclusivo de membros</p>
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div id="prog-bar"></div>
+    </div>
+    <p class="countdown">Redirecionando em <strong id="sec">3</strong>s</p>
+
   </div>
+
+  <script>
+    const totalMs = 3000;
+    const tick = 50;
+    let elapsed = 0;
+    const bar = document.getElementById('prog-bar');
+    const sec = document.getElementById('sec');
+    const ring = document.getElementById('ring');
+    const circumference = 213.6;
+
+    const t = setInterval(() => {
+      elapsed += tick;
+      const ratio = Math.min(elapsed / totalMs, 1);
+      bar.style.width = (100 - ratio * 100) + '%';
+      ring.style.strokeDashoffset = circumference * (1 - ratio);
+      sec.textContent = Math.max(Math.ceil((totalMs - elapsed) / 1000), 0);
+      if (elapsed >= totalMs) clearInterval(t);
+    }, tick);
+  </script>
 </body>
 </html>
